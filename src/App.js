@@ -775,12 +775,10 @@ MIT License. Feel free to use and modify.
             </div>
             <div className="lg:w-1/2 space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate software developer ready to embark on my professional journey. I'm excited to learn and contribute to creating digital solutions, focusing on transforming complex ideas into simple, user-friendly, and aesthetically pleasing designs.
+                I'm Anushka Singh, a passionate Software Developer and AIML enthusiast. With hands-on projects, I have internship experience as a Java Developer. I have strong foundation with Java, Basic Python, LLMs and OpenAI for building applications and exploring ways of problem solving.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                My expertise spans across modern web technologies, and I'm
-                always eager to learn new tools and frameworks to stay ahead of
-                the curve.
+                I am adaptable to work in different environments by excelling in management and problem solving skills. Open for cross technology work, learning and connecting.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gray-800/50 p-4 rounded-lg">
