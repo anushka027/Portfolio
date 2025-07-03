@@ -775,9 +775,7 @@ MIT License. Feel free to use and modify.
             </div>
             <div className="lg:w-1/2 space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate full-stack developer with over 4 years of
-                experience creating digital solutions that make a difference. I
-                love turning complex problems into simple, beautiful designs.
+                I'm a passionate software developer ready to embark on my professional journey. I'm excited to learn and contribute to creating digital solutions, focusing on transforming complex ideas into simple, user-friendly, and aesthetically pleasing designs.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 My expertise spans across modern web technologies, and I'm
