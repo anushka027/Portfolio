@@ -125,7 +125,6 @@ npm start
 **Anushka Singh** <br>
 Software Developer | NLP Enthusiast
 `,
-
     },
     {
       id: 2,
@@ -135,7 +134,7 @@ Software Developer | NLP Enthusiast
       technologies: ["Java", "Socket Programming", "Multithreading", "TCP/IP"],
       image: "/images/peer.jpeg",
       githubLink: "https://github.com/anushka027/PeerToPeerApp",
-      readme:`# Peer-to-Peer Chat Application
+      readme: `# Peer-to-Peer Chat Application
 
 This is a console-based, LAN-supported Peer-to-Peer Chat Application developed in Core Java. It uses TCP/IP socket programming, multithreading, concurrency control, and exception handling to enable real-time communication between users on the same local network. Jansi libraries have been incorporated to enhance the console appearance.
 
@@ -232,7 +231,7 @@ A user-friendly web application that converts speech to text using OpenAI's Whis
 ### 1. Clone the repo
 
 \`\`\`bash
-git clone https://github.com/your-username/whisper-stt-app.git
+git clone https://github.com/anushka027/whisper-stt-app.git
 cd whisper-stt-app
 \`\`\`
 
@@ -307,8 +306,49 @@ MIT License. Feel free to use and modify.
 
 ---
 
-> For best transcription quality, ensure clear audio and minimal background noise.`
+> For best transcription quality, ensure clear audio and minimal background noise.`,
+    },
+    {
+      id: 4,
+      title: "Jagatmitra Foundation",
+      description:
+        "A modern, responsive website for Jagatmitra Foundation, a non-profit organization dedicated to empowering communities through sustainable development initiatives.",
+      technologies: ["Node.js", "Tailwind CSS", "MongoDB", "Cloudinary"],
+      image: "/images/jagatmitra.png",
+      liveLink: "https://www.jagatmitrafoundation.com/",
+      readme: `# Jagatmitra Foundation Website
 
+A modern, responsive website for Jagatmitra Foundation, a non-profit organization dedicated to empowering communities through sustainable development initiatives.
+
+## 🌟 Overview
+
+Jagatmitra Foundation is a Section 8 non-profit organization established in 2020, focused on creating meaningful impact in the lives of the underprivileged and environmental conservation. This website serves as the digital presence for the foundation's mission, programs, and community engagement.
+
+## ✨ Key Features
+
+### 🎨 Modern Design
+- Clean, professional interface with gradient backgrounds
+- Responsive design optimized for all devices
+- Animated components with smooth transitions
+- Interactive elements and hover effects
+    
+### 🚀 Technical Features
+- Built with Next.js 14 and React 18
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Framer Motion for animations
+- Optimized performance and SEO
+- Form validation and file handling
+
+## 🛠 Technology Stack
+
+- *Framework*: Next.js 14 (App Router)
+- *Language*: TypeScript
+- *Styling*: Tailwind CSS
+- *Animations*: Framer Motion
+- *Icons*: Lucide React, React Icons
+- *State Management*: React Hooks
+- *Image Optimization*: Next.js Image Component`,
     },
   ];
 
@@ -342,11 +382,18 @@ MIT License. Feel free to use and modify.
 
   const experience = [
     {
-      title: "Java Intern",
+      title: "Software Development Internship",
       company: "MetaSquare Technologies",
       period: "August 2024 - October 2024",
       description:
         "Strengthened backend development skills and gained hands-on experience in real-world projects",
+    },
+    {
+      title: "Software Development Intern",
+      company: "Jagatmitra Foundation",
+      period: "August 2025 -September 2025",
+      description:
+        "Developed and deployed scalable and responsive website with latest technologies and interactive design",
     },
   ];
 
@@ -364,10 +411,16 @@ MIT License. Feel free to use and modify.
       image: "/images/iNeuron.png",
     },
     {
-      name: "Java Internship",
+      name: "Software Development Internship",
       issuer: "MetaSquare Technologies Pvt. Ltd",
       file: "/certificates/Internship.pdf",
       image: "/images/Internship.png",
+    },
+    {
+      name: "Software Development Internship",
+      issuer: "Jagatmitra Foundation",
+      file: "/certificates/jagatmitra.pdf",
+      image: "/images/jagatmitra_intern.png",
     },
     {
       name: "Co-authoring Certification by Reasons and Laughter",
@@ -607,40 +660,111 @@ MIT License. Feel free to use and modify.
     </div>
   );
 
-  const LaptopMockup = () => (
-    <div
-      className="relative w-[600px] h-[400px] mx-auto my-12"
-      style={{
-        transform: `perspective(1000px) rotateX(${
-          15 + scrollY * 0.05
-        }deg) rotateY(${scrollY * 0.1}deg)`,
-        transition: "transform 0.1s ease-out",
-      }}
-    >
-      <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-2xl">
-        <div className="w-full h-6 bg-gradient-to-r from-gray-700 to-gray-600 rounded-t-lg flex items-center justify-center space-x-3">
-          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-        </div>
-        <div className="p-6 h-full bg-black rounded-b-lg">
-          <pre className="text-green-400 text-sm leading-relaxed">
-            {`public class HelloWorld {
+  const LaptopMockup = () => {
+    const [rotation, setRotation] = useState(0);
+
+    useEffect(() => {
+      let animationId;
+      let startTime = Date.now();
+
+      const animate = () => {
+        const currentTime = Date.now();
+        const elapsed = currentTime - startTime;
+        setRotation((elapsed * 0.02) % 360);
+        animationId = requestAnimationFrame(animate);
+      };
+
+      animationId = requestAnimationFrame(animate);
+
+      return () => {
+        if (animationId) {
+          cancelAnimationFrame(animationId);
+        }
+      };
+    }, []);
+
+    return (
+      <div className="relative w-full max-w-[700px] mx-auto my-8 md:my-12 px-4 hidden lg:block">
+        <div
+          className="relative"
+          style={{
+            transform: `perspective(2000px) rotateX(15deg) rotateY(${
+              rotation * 0.3
+            }deg)`,
+            transformStyle: "preserve-3d",
+          }}
+        >
+          {/* Laptop Screen */}
+          <div
+            className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[380px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-t-lg shadow-2xl border-4 md:border-8 border-gray-700 border-b-0"
+            style={{
+              transformStyle: "preserve-3d",
+              boxShadow:
+                "0 25px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.3)",
+            }}
+          >
+            {/* Camera */}
+            <div className="absolute top-1 md:top-2 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 md:w-2 md:h-2 bg-gray-600 rounded-full shadow-inner"></div>
+
+            {/* Screen Content */}
+            <div className="absolute inset-1 md:inset-2 bg-gradient-to-br from-gray-950 to-black rounded-sm overflow-hidden">
+              {/* Browser Header */}
+              <div className="w-full h-6 md:h-8 bg-gradient-to-r from-gray-800 to-gray-700 flex items-center px-2 md:px-3 space-x-1 md:space-x-2">
+                <div className="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full shadow-lg"></div>
+                <div className="w-2 h-2 md:w-3 md:h-3 bg-yellow-500 rounded-full shadow-lg"></div>
+                <div className="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full shadow-lg"></div>
+                <div className="flex-1 mx-2 md:mx-4 h-4 md:h-5 bg-gray-900 rounded-md hidden sm:flex items-center px-2">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-purple-400 rounded-full mr-1 md:mr-2"></div>
+                  <span className="text-gray-400 text-[10px] md:text-xs">
+                    localhost:3000
+                  </span>
+                </div>
+              </div>
+
+              {/* Code Editor */}
+              <div className="bg-gray-950 p-2 md:p-4 h-[calc(100%-1.5rem)] md:h-[calc(100%-2rem)] overflow-hidden">
+                <pre className="text-green-400 text-[8px] sm:text-[10px] md:text-xs leading-relaxed font-mono">
+                  {`public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        System.out.println("Hello!");
         
-        // Creating amazing projects
+        // Creating projects
         Developer dev = new Developer();
         dev.createPortfolio();
         dev.buildFeatures();
         dev.deployToProduction();
     }
 }`}
-          </pre>
+                </pre>
+              </div>
+            </div>
+
+            {/* Screen Reflection Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-t-lg pointer-events-none"></div>
+          </div>
+
+          {/* Laptop Base */}
+          <div
+            className="relative w-full h-[50px] md:h-[70px]"
+            style={{
+              transformStyle: "preserve-3d",
+              transform: "rotateX(-85deg)",
+              transformOrigin: "top center",
+            }}
+          >
+            {/* Keyboard Area */}
+            <div className="w-full h-full bg-gradient-to-br from-gray-700 via-gray-600 to-gray-700 rounded-b-xl shadow-2xl border-4 md:border-8 border-t-0 border-gray-700">
+              {/* Trackpad */}
+              <div className="absolute top-1 md:top-2 left-1/2 transform -translate-x-1/2 w-20 h-10 md:w-32 md:h-16 bg-gray-800 rounded-lg border border-gray-700 shadow-inner"></div>
+            </div>
+          </div>
+
+          {/* Overall Shadow */}
+          <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-[80%] h-4 bg-purple-500/20 blur-2xl rounded-full"></div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const ProjectModal = ({ project, onClose }) => (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -675,29 +799,30 @@ MIT License. Feel free to use and modify.
             ))}
           </div>
 
-          <div className="flex gap-4 mb-6">
+          <div className="flex gap-3">
             {project.liveLink && (
               <a
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg text-sm font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-lg hover:shadow-green-500/30 transform hover:scale-105"
+                onClick={(e) => e.stopPropagation()}
               >
                 <Eye className="w-4 h-4" />
                 Live Demo
               </a>
             )}
             {project.githubLink && (
-
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-lg text-sm font-semibold hover:from-gray-600 hover:to-gray-700 transition-all duration-200 shadow-lg hover:shadow-gray-500/30 transform hover:scale-105 border border-gray-600"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
             )}
           </div>
 
@@ -741,7 +866,7 @@ MIT License. Feel free to use and modify.
                   Get In Touch
                 </button>
                 <a
-                  href="/resume.pdf"
+                  href="/ANUSHKA_SINGH_RESUME.pdf"
                   download
                   className="flex items-center gap-2 px-8 py-3 border border-purple-500 rounded-lg hover:bg-purple-500/10 transition-all duration-300"
                 >
@@ -775,10 +900,16 @@ MIT License. Feel free to use and modify.
             </div>
             <div className="lg:w-1/2 space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm Anushka Singh, a passionate Software Developer and AIML enthusiast. With hands-on projects, I have internship experience as a Java Developer. I have strong foundation with Java, Basic Python, LLMs and OpenAI for building applications and exploring ways of problem solving.
+                I'm Anushka Singh, a passionate Software Developer and AIML
+                enthusiast. With hands-on projects, I have internship experience
+                as a Java Developer. I have strong foundation with Java, Basic
+                Python, LLMs and OpenAI for building applications and exploring
+                ways of problem solving.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                I am adaptable to work in different environments by excelling in management and problem solving skills. Open for cross technology work, learning and connecting.
+                I am adaptable to work in different environments by excelling in
+                management and problem solving skills. Open for cross technology
+                work, learning and connecting.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gray-800/50 p-4 rounded-lg">
@@ -1047,7 +1178,7 @@ MIT License. Feel free to use and modify.
       <footer className="py-8 border-t border-gray-800">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400">
-            © 2025 Your Name. All rights reserved. Built with React and ❤️
+            © 2025 Anushka Portfolio. All rights reserved. Built with React and ❤️
           </p>
         </div>
       </footer>
